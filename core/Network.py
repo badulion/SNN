@@ -5,7 +5,7 @@ from neuralnet.optimizer import *
 from neuralnet.loss import *
 
 
-class NeuralNetwork:
+class Network:
     def __init__(self, layerList):
         #dimensions of input and output vectors
         self.inputDimension = layerList[0].inputDimension
@@ -76,4 +76,4 @@ class NeuralNetwork:
                 #update batch iterators
                 batch_start += batch_size
                 batch_end = np.min([batch_end + batch_size, data_size])
-            print('Epoch %d/%d   error=%f' % (epoch+1,epochs,self.loss.error_history[-1]), sep=' ', end='\r')
+            print('Epoch %d/%d   loss=%f' % (epoch+1,epochs,self.loss.error_history[-1]), sep=' ', end='\n')

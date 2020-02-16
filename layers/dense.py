@@ -1,10 +1,10 @@
 import numpy as np
-class Layer:
+class Dense:
     def __init__(self, inputDimension, outputDimension):
         self.inputDimension = inputDimension #number of input neurons
         self.outputDimension = outputDimension
-        self.weights = np.random.rand(self.inputDimension, self.outputDimension)/10-0.05
-        self.bias = np.random.rand(self.outputDimension)/10-0.05
+        self.weights = 0.01*np.random.randn(self.inputDimension, self.outputDimension)
+        self.bias = 0.01*np.random.randn(self.outputDimension)
 
         self.outputActivation = None
         self.inputActivation = None
