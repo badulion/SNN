@@ -1,8 +1,4 @@
 import numpy as np
-from neuralnet.layer import *
-from neuralnet.activation import *
-from neuralnet.optimizer import *
-from neuralnet.loss import *
 
 
 class Network:
