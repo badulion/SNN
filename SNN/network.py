@@ -2,6 +2,7 @@ from .loss import getLoss
 from .optimizer import getOptimizer
 from .metrics import getMetrics
 import numpy as np
+import os
 
 class Network:
     def __init__(self, layerList, loss, optimizer="GradientDescent"):
@@ -152,3 +153,19 @@ class Network:
         self.optimizer.learning_rate = lr
         self.optimizer.regularization = regularization
         self.optimizer.beta = beta
+
+    def save(self, path = "./"):
+        if not os.path.exists(path):
+            os.makedirs(path)
+        for i in range(len(self.networkLayers)):
+            bias_name = "bias"+"_layer_"+str(i)+".npy"
+            weights_name = "weights"+"_layer_"+str(i)+".npy"
+            np.save(path+weights_name, self.networkLayers[i].weights)
+            np.save(path+bias_name, self.networkLayers[i].bias)
+
+    def load(self, path = "./"):
+        for i in range(len(self.networkLayers)):
+            bias_name = "bias"+"_layer_"+str(i)+".npy"
+            weights_name = "weights"+"_layer_"+str(i)+".npy"
+            self.networkLayers[i].weights= np.load(path+weights_name)
+            self.networkLayers[i].bias = np.load(path+bias_name)
