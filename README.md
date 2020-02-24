@@ -1,18 +1,17 @@
-# Project Title
+# Simple Neural Network
 
-One Paragraph of project description goes here
+Simple Neural Network, or SNN for short, is a high-level neural networks API, written in Python and capable of training and evaluating simple multilayer perceptron networks.. 
+It was developed as part of the Gesture Recognition Project for the Lecture Machine Learning at the University of Würzburg. 
+A big focus has been put on easiness-of-use to enable fast experimentation by intuitively defining the network. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+To use SNN in your project simply clone the repository and import SNN in your script.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+SNN requires a Python 3 environment with Numpy >= 1.17 to run the training of the network and Pandas >= 0.25.3 to run some of th evaluations.
 
-```
-Give examples
-```
 
 ### Installing
 
@@ -32,7 +31,7 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+## Running the examples
 
 Explain how to run the automated tests for this system
 
