@@ -25,6 +25,7 @@ def classification_report(y_true, y_pred):
      'recall': recall,
      'precision': precision,
      'f_scores': f_scores,
+     'support': y_true.sum(axis=0),
     }
 
     return pd.DataFrame(classification)
