@@ -29,3 +29,9 @@ def classification_report(y_true, y_pred):
     }
 
     return pd.DataFrame(classification)
+
+def confusion_matrix(y_true, y_pred):
+    #changing predictions to 0/1:
+    y_pred = (y_pred == y_pred.max(axis=1, keepdims=True))*1
+    supports = y_true.sum(axis=0, keepdims=True)
+    return (y_pred.T @ y_true)/supports

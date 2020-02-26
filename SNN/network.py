@@ -13,7 +13,7 @@ class Network:
         for layer in self.networkLayers:
             layer.initializeWeights()
 
-        #copile variables
+        #optimization variables
         self.optimizer = getOptimizer(optimizer, self)
         self.loss = getLoss(loss)
 
